@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCoffeeToCup.cs" />
+    <Compile Include="BoilKettle.cs" />
     <Compile Include="BrewUp.cs" />
     <Compile Include="FillKettle.cs" />
     <Compile Include="IStep.cs" />

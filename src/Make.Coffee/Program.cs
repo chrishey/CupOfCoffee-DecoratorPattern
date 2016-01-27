@@ -6,7 +6,7 @@ namespace Make.Coffee
     {
         static void Main(string[] args)
         {
-            var brewUp = new BrewUp(new FillKettle(null));
+            var brewUp = new BrewUp(new FillKettle(new BoilKettle(new AddCoffeeToCup(null))));
 
             brewUp.CuppaFather();
 
