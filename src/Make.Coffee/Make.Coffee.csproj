@@ -45,10 +45,12 @@
     <Compile Include="AddMilk.cs" />
     <Compile Include="BoilKettle.cs" />
     <Compile Include="BrewUp.cs" />
+    <Compile Include="Coffee.cs" />
     <Compile Include="FillKettle.cs" />
     <Compile Include="IStep.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tea.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

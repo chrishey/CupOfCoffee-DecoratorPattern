@@ -6,9 +6,26 @@ namespace Make.Coffee
     {
         static void Main(string[] args)
         {
-            var brewUp = new BrewUp(new FillKettle(new BoilKettle(new AddCoffeeToCup(new AddMilk(null)))));
+            if (args.Length == 0)
+            {
+                Console.WriteLine("Sorry, we couldn't find your beverage");
+                return;
+            }
 
-            brewUp.CuppaFather();
+            switch (args[0].ToLower())
+            {
+                case "tea":
+                    var tea = new Tea();
+                    tea.CuppaFather();
+                    break;
+                case "coffee":
+                    var coffee = new Coffee();
+                    coffee.CuppaFather();
+                    break;
+                default:
+                    Console.WriteLine("Sorry, we couldn't find your beverage");
+                    break;
+            }
 
             Console.ReadKey();
         }
