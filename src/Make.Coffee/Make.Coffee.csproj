@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddCoffeeToCup.cs" />
+    <Compile Include="AddMilk.cs" />
     <Compile Include="BoilKettle.cs" />
     <Compile Include="BrewUp.cs" />
     <Compile Include="FillKettle.cs" />
