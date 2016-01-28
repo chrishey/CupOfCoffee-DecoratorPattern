@@ -2,7 +2,7 @@
 {
     public class Tea : BrewUp
     {
-        public Tea() : base (new FillKettle(new BoilKettle(null)))
+        public Tea() : base (new FillKettle(new BoilKettle(new AddTeaBag(null))))
         {
             
         }
