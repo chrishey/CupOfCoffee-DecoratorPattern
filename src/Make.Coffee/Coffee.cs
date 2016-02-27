@@ -1,4 +1,6 @@
-﻿namespace Make.Coffee
+﻿using Make.Coffee.Steps;
+
+namespace Make.Coffee
 {
     public class Coffee : BrewUp
     {

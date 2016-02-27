@@ -1,4 +1,4 @@
-﻿namespace Make.Coffee
+﻿namespace Make.Coffee.Steps
 {
     public interface IStep
     {

@@ -1,19 +1,19 @@
 ﻿using System;
 
-namespace Make.Coffee
+namespace Make.Coffee.Steps
 {
-    public class AddCoffeeToCup : IStep
+    public class AddMilk : IStep
     {
         private readonly IStep _step;
 
-        public AddCoffeeToCup(IStep step)
+        public AddMilk(IStep step)
         {
             _step = step;
         }
 
         public void Do()
         {
-            Console.WriteLine("Add Coffee to the cup");
+            Console.WriteLine("Add Milk");
 
             if (_step == null)
                 return;

@@ -12,7 +12,9 @@ namespace Make.Coffee
             }
             else
             {
-                switch (args[0].ToLower())
+                var commandLineArgs = new CommandLineArgsParser(args);
+
+                switch (commandLineArgs["drink"].ToLower())
                 {
                     case "tea":
                         var tea = new Tea();

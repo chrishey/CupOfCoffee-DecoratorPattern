@@ -41,15 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddCoffeeToCup.cs" />
-    <Compile Include="AddMilk.cs" />
-    <Compile Include="AddTeaBag.cs" />
-    <Compile Include="BoilKettle.cs" />
+    <Compile Include="Steps\AddCoffeeToCup.cs" />
+    <Compile Include="Steps\AddMilk.cs" />
+    <Compile Include="Steps\AddTeaBag.cs" />
+    <Compile Include="Steps\BoilKettle.cs" />
     <Compile Include="BrewUp.cs" />
     <Compile Include="Coffee.cs" />
     <Compile Include="CommandLineArgsParser.cs" />
-    <Compile Include="FillKettle.cs" />
-    <Compile Include="IStep.cs" />
+    <Compile Include="Steps\FillKettle.cs" />
+    <Compile Include="Steps\IStep.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tea.cs" />

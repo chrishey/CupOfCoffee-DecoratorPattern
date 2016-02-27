@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Make.Coffee
+namespace Make.Coffee.Steps
 {
     public class AddTeaBag : IStep
     {
