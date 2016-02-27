@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using Make.Coffee.Steps;
 
 namespace Make.Coffee
 {
@@ -14,10 +16,13 @@ namespace Make.Coffee
             {
                 var commandLineArgs = new CommandLineArgsParser(args);
 
+                var extras = GetExtras(commandLineArgs);
+                
+
                 switch (commandLineArgs["drink"].ToLower())
                 {
                     case "tea":
-                        var tea = new Tea();
+                        var tea = new Tea(extras);
                         tea.CuppaFather();
                         break;
                     case "coffee":
@@ -31,6 +36,19 @@ namespace Make.Coffee
             }
 
             Console.ReadKey();
+        }
+
+        private static Extra[] GetExtras(CommandLineArgsParser commandLineArgs)
+        {
+            var extras = new List<Extra>();
+
+            if (commandLineArgs["sugar"] != null)
+            {
+                var sugar = int.Parse(commandLineArgs["sugar"]);
+                extras.Add(new AddSugar(null, sugar));
+            }
+
+            return extras.ToArray();
         }
     }
 }
