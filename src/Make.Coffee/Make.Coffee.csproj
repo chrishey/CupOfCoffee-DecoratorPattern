@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extra.cs" />
     <Compile Include="Steps\AddCoffeeToCup.cs" />
     <Compile Include="Steps\AddMilk.cs" />
+    <Compile Include="Steps\AddSugar.cs" />
     <Compile Include="Steps\AddTeaBag.cs" />
     <Compile Include="Steps\BoilKettle.cs" />
     <Compile Include="BrewUp.cs" />
