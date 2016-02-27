@@ -47,6 +47,7 @@
     <Compile Include="BoilKettle.cs" />
     <Compile Include="BrewUp.cs" />
     <Compile Include="Coffee.cs" />
+    <Compile Include="CommandLineArgsParser.cs" />
     <Compile Include="FillKettle.cs" />
     <Compile Include="IStep.cs" />
     <Compile Include="Program.cs" />

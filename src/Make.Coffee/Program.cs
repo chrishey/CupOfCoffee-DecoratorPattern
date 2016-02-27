@@ -23,7 +23,7 @@ namespace Make.Coffee
                         coffee.CuppaFather();
                         break;
                     default:
-                        Console.WriteLine("Sorry, we couldn't find your beverage");
+                        Console.WriteLine("Sorry, we couldn't find your beverage. Would you like a cuppa Tea, Father?");
                         break;
                 }
             }
