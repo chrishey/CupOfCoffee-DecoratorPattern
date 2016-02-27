@@ -4,7 +4,7 @@ namespace Make.Coffee
 {
     public class Tea : BrewUp
     {
-        public Tea() : base (new FillKettle(new BoilKettle(new AddTeaBag(null))))
+        public Tea() : base (new FillKettle(new BoilKettle(new AddTeaBag(new AddMilk(null)))))
         {
             
         }
