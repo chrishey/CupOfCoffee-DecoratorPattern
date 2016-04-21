@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using Make.Coffee.Steps;
 
 namespace Make.Coffee
 {
+    using System.Collections;
+    using System.Linq;
+
     class Program
     {
         static void Main(string[] args)
@@ -18,7 +20,6 @@ namespace Make.Coffee
 
                 var extras = GetExtras(commandLineArgs);
                 
-
                 switch (commandLineArgs["drink"].ToLower())
                 {
                     case "tea":
@@ -40,14 +41,36 @@ namespace Make.Coffee
 
         private static Extra[] GetExtras(CommandLineArgsParser commandLineArgs)
         {
+            // ** Spike of using reflection to find extras, then create them at runtime **
+
+
+            // Gets all types in the AppDomain that derive from Extra
+            var allExtraTypes = AppDomain.CurrentDomain.GetAssemblies()
+                .SelectMany(s => s.GetTypes())
+                .Where(p => typeof(Extra).IsAssignableFrom(p))
+                .ToArray();
+
             var extras = new List<Extra>();
-
-            if (commandLineArgs["sugar"] != null)
+            foreach (DictionaryEntry commandLineArg in commandLineArgs)
             {
-                var sugar = int.Parse(commandLineArgs["sugar"]);
-                extras.Add(new AddSugar(null, sugar));
-            }
+                var arg = (string)commandLineArg.Key;
+                
+                // Ignore reserved arguments
+                if (arg.Equals("tea", StringComparison.InvariantCultureIgnoreCase) ||
+                    arg.Equals("coffee", StringComparison.InvariantCultureIgnoreCase))
+                    continue;
+                
+                // Try to find an extra that matches this command line argument. Another option would be to add a 'Name' property to each class,
+                //  instantiate all Extras and interogate their name properties. This is quicker but requires the class name to match the argument
+                var extra = allExtraTypes.FirstOrDefault(e => e.Name.Equals(arg, StringComparison.InvariantCultureIgnoreCase));
+                if (extra == null)
+                    continue;
 
+                // Create a new instance of the Extra. We know that it has a constructor that takes an int
+                var createdSugar = (Extra)Activator.CreateInstance(extra, null, int.Parse((string)commandLineArg.Value));
+                extras.Add(createdSugar);
+            }
+            
             return extras.ToArray();
         }
     }
