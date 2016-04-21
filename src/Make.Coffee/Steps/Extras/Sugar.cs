@@ -1,12 +1,12 @@
-﻿using System;
-
-namespace Make.Coffee.Steps
+﻿namespace Make.Coffee.Steps.Extras
 {
-    public class AddSugar : Extra, IStep
+    using System;
+
+    public class Sugar : Extra, IStep
     {
         private readonly IStep _step;
 
-        public AddSugar(IStep step, int quantity):base(quantity)
+        public Sugar(IStep step, int quantity):base(quantity)
         {
             _step = step;
         }

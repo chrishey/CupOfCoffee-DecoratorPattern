@@ -4,7 +4,8 @@ using System.Text.RegularExpressions;
 
 namespace Make.Coffee
 {
-    internal class CommandLineArgsParser
+    using System.Collections;
+    internal class CommandLineArgsParser : IEnumerable
     {
         public CommandLineArgsParser(IEnumerable<string> args)
         {
@@ -101,6 +102,11 @@ namespace Make.Coffee
             {
                 return (_parameters[param]);
             }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return _parameters.GetEnumerator();
         }
     }
 }

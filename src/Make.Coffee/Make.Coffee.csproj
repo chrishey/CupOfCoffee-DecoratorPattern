@@ -44,12 +44,13 @@
     <Compile Include="Extra.cs" />
     <Compile Include="Steps\AddCoffeeToCup.cs" />
     <Compile Include="Steps\AddMilk.cs" />
-    <Compile Include="Steps\AddSugar.cs" />
+    <Compile Include="Steps\Extras\Sugar.cs" />
     <Compile Include="Steps\AddTeaBag.cs" />
     <Compile Include="Steps\BoilKettle.cs" />
     <Compile Include="BrewUp.cs" />
     <Compile Include="Coffee.cs" />
     <Compile Include="CommandLineArgsParser.cs" />
+    <Compile Include="Steps\Extras\Sweetener.cs" />
     <Compile Include="Steps\FillKettle.cs" />
     <Compile Include="Steps\IStep.cs" />
     <Compile Include="Program.cs" />
