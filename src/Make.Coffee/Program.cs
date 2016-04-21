@@ -6,6 +6,11 @@ namespace Make.Coffee
 {
     class Program
     {
+        //private List<Type> _extras = new List<Type>
+        //{
+        //    typeof()
+        //}; 
+
         static void Main(string[] args)
         {
             if (args.Length == 0)
@@ -22,11 +27,11 @@ namespace Make.Coffee
                 switch (commandLineArgs["drink"].ToLower())
                 {
                     case "tea":
-                        var tea = new Tea(extras);
+                        var tea = new Tea(null);
                         tea.CuppaFather();
                         break;
                     case "coffee":
-                        var coffee = new Coffee();
+                        var coffee = new Coffee(null);
                         coffee.CuppaFather();
                         break;
                     default:
@@ -38,17 +43,28 @@ namespace Make.Coffee
             Console.ReadKey();
         }
 
-        private static Extra[] GetExtras(CommandLineArgsParser commandLineArgs)
+        //private static Extra[] GetExtras(CommandLineArgsParser commandLineArgs)
+        //{
+        //    var extras = new List<Extra>();
+
+        //    if (commandLineArgs["sugar"] != null)
+        //    {
+        //        var sugar = int.Parse(commandLineArgs["sugar"]);
+        //        extras.Add(new AddSugar(null, sugar));
+        //    }
+
+        //    return extras.ToArray();
+        //}
+
+        private IStep BuildExtras(CommandLineArgsParser args)
         {
-            var extras = new List<Extra>();
 
-            if (commandLineArgs["sugar"] != null)
+            IStep currentStep = 1stStep;
+            foreach (var extra in extras)
             {
-                var sugar = int.Parse(commandLineArgs["sugar"]);
-                extras.Add(new AddSugar(null, sugar));
+                var newStep = currentStep(extra.step);
+                
             }
-
-            return extras.ToArray();
         }
     }
 }

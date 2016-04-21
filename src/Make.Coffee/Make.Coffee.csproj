@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extra.cs" />
+    <Compile Include="IExtra.cs" />
     <Compile Include="Steps\AddCoffeeToCup.cs" />
     <Compile Include="Steps\AddMilk.cs" />
     <Compile Include="Steps\AddSugar.cs" />

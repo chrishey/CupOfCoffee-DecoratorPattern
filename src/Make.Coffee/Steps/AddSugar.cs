@@ -2,11 +2,11 @@
 
 namespace Make.Coffee.Steps
 {
-    public class AddSugar : Extra, IStep
+    public class AddSugar : IExtra
     {
         private readonly IStep _step;
 
-        public AddSugar(IStep step, int quantity):base(quantity)
+        public AddSugar(IStep step)
         {
             _step = step;
         }
@@ -20,5 +20,8 @@ namespace Make.Coffee.Steps
 
             _step.Do();
         }
+
+        public string Name { get { return "AddSugar"; } }
+        public int Quantity { get; set; }
     }
 }
