@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using Make.Coffee.Steps;
 
 namespace Make.Coffee
@@ -7,7 +7,7 @@ namespace Make.Coffee
     {
         private readonly Extra[] _extras;
 
-        public Tea(Extra[] extras) : base (new FillKettle(new BoilKettle(new AddTeaBag(new AddMilk(null)))))
+        public Tea(Extra[] extras) : base (new FillKettle(new BoilKettle(new AddTeaBag(null))))
         {
             _extras = extras;
         }
